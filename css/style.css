@@ -1,0 +1,22 @@
+container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header{
+    height: 50px;
+    background-color: #f8f8f8;
+    position: relative;
+}
+
+header .row{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    max-width: 1200px;
+}
+
+button>p{
+    margin: 10px;
+}
