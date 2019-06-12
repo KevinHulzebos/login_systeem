@@ -19,10 +19,10 @@ if(isset($_SESSION['attempts']))
 
                                     $sql = "INSERT INTO blocked (ip) VALUES ('$ip')";
 
-                                    if(mysqli_query($link, $sql)){
-                                        echo "Records inserted successfully.";
-                                    } else{
-                                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                                    if ($link->query($sql) === TRUE) {
+                                        echo "New record created successfully";
+                                    } else {
+                                        echo "Error: " . $sql . "<br>" . $link->error;
                                     }
 
 
@@ -30,5 +30,10 @@ if(isset($_SESSION['attempts']))
                                     $_SESSION['attempts']=$_SESSION['attempts']+1;
                                     echo $_SESSION['attempts'];
                                 }
+                            }
+                            else
+                            {
+                                $_SESSION['attempts']=0;
+                            }
 
 
